@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
-
 /**
  * Time Entry Component: Allows a user to input time
  * of day based on hour, minute and am/pm.
@@ -16,9 +15,6 @@ export class TimeEntryComponent implements ControlValueAccessor, OnInit {
   showLabels: boolean;
   @Output() timeChanged = new EventEmitter();
   @Output() timeChange = new EventEmitter();
-  @Input() defaultHr?: number;
-  @Input() defaultMin?: number;
-  @Input() defaultTod?: string;
   @Input() labels?: boolean;
   private _time: Date;
 
