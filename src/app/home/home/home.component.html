@@ -1,4 +1,26 @@
-<div class="starter-template">
-  <h1>{{ title }}</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<!--<div class="starter-template">-->
+  <!--<h1>{{ title }}</h1>-->
+<!--</div>-->
+
+<div class="card">
+  <div class="card-header">
+    Workday Planner
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Start Time</h4>
+    <app-time-entry [defaultHr]="6"></app-time-entry>
+
+    <h4>Break Duration</h4>
+    <app-time-block-entry></app-time-block-entry>
+
+    <h4>Work Time</h4>
+    <app-time-block-entry></app-time-block-entry>
+
+    <div class="text-center">
+      <button class="btn btn-lg btn-primary btn-block">View Summary</button>
+    </div>
+  </div>
 </div>
+
+
+

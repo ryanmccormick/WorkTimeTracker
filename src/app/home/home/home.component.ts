@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TimeBlock } from '../../shared/time-block-entry/time-block.model';
+
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  title = 'Time Tracker';
+  startTime: Date;
+  breakDuration: TimeBlock;
+  workTime: TimeBlock;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
