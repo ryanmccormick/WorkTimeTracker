@@ -1,21 +1,16 @@
-<!--<div class="starter-template">-->
-  <!--<h1>{{ title }}</h1>-->
-<!--</div>-->
-
 <div class="card">
   <div class="card-header">
-    <!--Workday Planner-->
-    {{ startTime }}
+    Workday Planner
   </div>
   <div class="card-body">
     <h4 class="card-title">Start Time</h4>
     <app-time-entry [(time)]="startTime"></app-time-entry>
 
     <h4>Break Duration</h4>
-    <app-time-block-entry></app-time-block-entry>
+    <app-time-block-entry [(block)]="breakDuration"></app-time-block-entry>
 
     <h4>Work Time</h4>
-    <app-time-block-entry></app-time-block-entry>
+    <app-time-block-entry [(block)]="workTime"></app-time-block-entry>
 
     <div class="text-center">
       <button class="btn btn-lg btn-primary btn-block">View Summary</button>
