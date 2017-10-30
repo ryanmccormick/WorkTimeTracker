@@ -4,11 +4,12 @@
 
 <div class="card">
   <div class="card-header">
-    Workday Planner
+    <!--Workday Planner-->
+    {{ startTime }}
   </div>
   <div class="card-body">
     <h4 class="card-title">Start Time</h4>
-    <app-time-entry [defaultHr]="6"></app-time-entry>
+    <app-time-entry [(time)]="startTime"></app-time-entry>
 
     <h4>Break Duration</h4>
     <app-time-block-entry></app-time-block-entry>
