@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { TimeBlockEntryComponent } from './time-block-entry.component';
+import { TimeBlock } from './time-block.model';
 
 describe('TimeBlockEntryComponent', () => {
   let component: TimeBlockEntryComponent;
@@ -8,6 +10,7 @@ describe('TimeBlockEntryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule],
       declarations: [ TimeBlockEntryComponent ]
     })
     .compileComponents();
@@ -16,6 +19,7 @@ describe('TimeBlockEntryComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TimeBlockEntryComponent);
     component = fixture.componentInstance;
+    component.block = new TimeBlock(1, 15);
     fixture.detectChanges();
   });
 
