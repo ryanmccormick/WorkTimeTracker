@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
-import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './home/home.module';
 
+/**
+ * AppModule: Application Entrypoint Module.
+ */
 @NgModule({
   declarations: [
     AppComponent

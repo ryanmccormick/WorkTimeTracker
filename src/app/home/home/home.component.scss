@@ -1,0 +1,17 @@
+$lime-green-background-color: #bdee00;
+
+.workday-planner {
+  min-width: 268px;
+  background-color: lighten($lime-green-background-color, 40%);
+}
+
+.workday-planner-head {
+  background-color: $lime-green-background-color;
+}
+
+.leave-time-display {
+  border: 1px solid #333;
+  border-radius:5px;
+  padding:10px;
+  background-color: $lime-green-background-color;
+}
