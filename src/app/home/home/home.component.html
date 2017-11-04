@@ -1,22 +1,24 @@
-<div class="card">
-  <div class="card-header">
+<div class="card workday-planner">
+  <div class="card-header workday-planner-head">
     Workday Planner
   </div>
   <div class="card-body">
-    <h4 class="card-title">Start Time</h4>
+    <h5 class="card-title">Start Time</h5>
     <app-time-entry [(time)]="startTime"></app-time-entry>
 
-    <h4>Break Duration</h4>
+    <h5>Break Duration</h5>
     <app-time-block-entry [(block)]="breakDuration"></app-time-block-entry>
 
-    <h4>Work Time</h4>
+    <h5>Work Time</h5>
     <app-time-block-entry [(block)]="workTime"></app-time-block-entry>
 
-    <div class="text-center">
-      <button class="btn btn-lg btn-primary btn-block">View Summary</button>
+    <div class="leave-time-display">
+      <h5>Leave Time</h5>
+      <h4>{{ leaveTime }}</h4>
+    </div>
+
+    <div class="text-center mt-2">
+      <button class="btn btn-lg btn-primary btn-block" (click)="setDefaults()">Reset</button>
     </div>
   </div>
 </div>
-
-
-
