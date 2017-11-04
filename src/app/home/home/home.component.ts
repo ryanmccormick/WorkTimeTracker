@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TimeBlock } from '../../shared/time-block-entry/time-block.model';
+import * as moment from 'moment';
+import { Moment } from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +14,38 @@ export class HomeComponent implements OnInit {
   breakDuration: TimeBlock;
   workTime: TimeBlock;
 
-  constructor() {
-    this.startTime = this.cleanDateBuilder();
+  constructor() { }
+
+  ngOnInit() {
+    this.setDefaults();
+  }
+
+  get leaveTime(): any {
+    const leaveTime = this._leaveTimeBuilder(this.startTime);
+    const momentTime: Moment = moment(leaveTime);
+
+    return momentTime.format('h:mm a');
+  }
+
+  setDefaults(): void {
+    this.startTime = this._cleanDateBuilder();
     this.breakDuration = new TimeBlock(0, 30);
     this.workTime = new TimeBlock(8, 0);
   }
 
-  ngOnInit() {
+  private _leaveTimeBuilder(startTime: Date): Date {
+    const leaveTime = new Date(startTime);
+    const leaveHour = leaveTime.getHours() + this.workTime.hours + this.breakDuration.hours;
+    const leaveMinute = leaveTime.getMinutes() + this.workTime.minutes + this.breakDuration.minutes;
+
+    // Adjust for work and break time
+    leaveTime.setHours(leaveHour);
+    leaveTime.setMinutes(leaveMinute);
+
+    return leaveTime;
   }
 
-  private cleanDateBuilder(): Date {
+  private _cleanDateBuilder(): Date {
     const time = new Date();
     time.setHours(7);
     time.setMinutes(0);
@@ -31,6 +55,5 @@ export class HomeComponent implements OnInit {
 
     return time;
   }
-
 
 }
