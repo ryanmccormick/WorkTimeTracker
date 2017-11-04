@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# To use this file, you must set local environment variables
+# that reference your aws account.
+
 # Configure aws-cli for s3 deployment
 aws configure set aws_access_key_id ${AWS_ACCESS_KEY_ID}
 aws configure set aws_secret_access_key ${AWS_SECRET_ACCESS_KEY}
