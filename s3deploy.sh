@@ -10,3 +10,6 @@ aws s3 sync ./dist s3://${S3_WORKTIME_BUCKET} --delete --include "*" --exclude "
 
 # Set MIME type for CSS files
 aws s3 sync ./dist s3://${S3_WORKTIME_BUCKET} --delete --exclude "*" --include "*.css" --content-type "text/css;charset=utf-8" --metadata-directive REPLACE
+
+# Run Cloudfront cache invalidation
+aws cloudfront create-invalidation --distribution-id ${WORKTIME_CLOUDFRONT_ID} --paths "/*"
