@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 /**
  * AppModule: Application Entrypoint Module.
@@ -16,8 +15,7 @@ import { HomeModule } from './home/home.module';
   imports: [
     BrowserModule,
     HomeModule,
-    SharedModule,
-    NguiDatetimePickerModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

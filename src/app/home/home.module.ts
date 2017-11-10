@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
@@ -20,8 +19,7 @@ export const sharedComponents = [HomeComponent];
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule,
-    NguiDatetimePickerModule
+    SharedModule
   ],
   exports: [sharedComponents],
   declarations: [sharedComponents]
