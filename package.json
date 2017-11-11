@@ -10,6 +10,7 @@
     "build:prodop": "ng build --prod --aot --build-optimizer",
     "test": "ng test",
     "test:nomap": "ng test --sourcemap=false",
+    "test:coverage": "ng test --code-coverage --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
