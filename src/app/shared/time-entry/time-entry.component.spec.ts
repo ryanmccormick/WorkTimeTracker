@@ -21,9 +21,6 @@ describe('TimeEntryComponent', () => {
     fixture = TestBed.createComponent(TimeEntryComponent);
     component = fixture.componentInstance;
     component.time = new Date();
-    // de = null;
-    // el = null;
-
     fixture.detectChanges();
   });
 
